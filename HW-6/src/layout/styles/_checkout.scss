@@ -1,0 +1,135 @@
+@import "vars";
+@import "mixins";
+.checkout {
+  margin-top: 90px;
+  margin-bottom: 90px;
+  &__details {
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 35px;
+  }
+  &__summary {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222222;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    outline: none;
+  }
+  &__summary::-webkit-details-marker {
+    display: none;
+  }
+}
+.checkout-section {
+  display: flex;
+  margin-bottom: 80px;
+  margin-left: 35px;
+  &__register {
+    margin-right: 290px;
+  }
+  &__text {
+  font-size: 13px;
+  color: #b3b2b2;
+  line-height: 20px;
+    &_bold {
+      font-size: 13px;
+      color: #222222;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    &_arrow::before {
+      content: '\00BB';
+      font-family: 'FontAwesome';
+      font-size: 13px;
+      padding-right: 4px;
+    }
+    &_arrow:last-of-type {
+      margin-bottom: 38px;
+    }
+    &_alert {
+      font-size: 13px;
+      color: #ff0d0d;
+      line-height: 20px;
+      font-weight: 700;
+    }
+  }
+  &__input {
+    height: 45px;
+    width: 390px;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    padding-left: 20px;
+    padding-right: 20px;
+    outline: none;
+  }
+  &__input-block {
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+  &__button {
+    @include button-transparent(50px, 180px, 14px, bold);
+  }
+  &__log {
+    display: flex;
+    align-items: center;
+    margin-top: 11px;
+    &__button {
+      @extend .checkout-section__button;
+      margin-right: 30px;
+    }
+    &__forgot {
+      @include link(14px, 700, #222222);
+    }
+  }
+  &__radio {
+    padding-bottom: 10px;
+    &__button {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+      margin: 10px 0 0 7px;
+      & + label {
+        position: relative;
+        padding: 0 0 0 35px;
+        cursor: pointer;
+      }
+      & + label:before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #555555;
+        border-radius: 50%;
+        background: #FFF;
+      }
+      & + label:after {
+        content: '';
+        position: absolute;
+        top: 1px;
+        left: 4px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #555555;
+        opacity: 0;
+        transition: .2s;
+      }
+      &:checked + label:after {
+        opacity: 1;
+      }
+    }
+    &__text {
+      font-size: 12px;
+      color: #222222;
+      font-weight: 700;
+    }
+  }
+  &__radio:first-of-type {
+    margin-top: 30px;
+  }
+  &__radio:last-of-type {
+    margin-bottom: 20px;
+  }
+}
