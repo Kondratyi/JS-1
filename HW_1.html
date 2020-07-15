@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW-1</title>
+</head>
+<body>
+    <button onclick="conversionTemp()">Задание 1</button>
+    <button onclick="assignAdmin()">Задание 2</button>
+    <button onclick="taskThree()">Задание 3</button>
+    <button onclick="taskFour()">Задание 4</button>
+    <script>
+        //Задание 1
+        
+        function conversionTemp() {
+            let tempC = +prompt('Укажите темпераратуру в градусах Цельсия');
+            let tempF = (9 / 5) * tempC + 32;
+            console.log(tempF);
+        };
+
+        //Задание 2
+
+        let name = 'Василий';
+        let admin = '';
+        function assignAdmin() {
+            admin = name;
+            console.log(admin);
+        };
+
+        //Задание 3
+
+        function taskThree() {
+        console.log('JS-выражение 1000 + "108" будет равно "1000108", т.к. "108" является строкой, то и 1000 будет переведена из числового значения в строчное и произойдёт конкатенация строк');
+        console.log(1000 + '108');
+        };
+
+        //Задание 4
+
+        function taskFour() {
+            console.log('Про атрибуты async и defer почитал вот здесь: https://learn.javascript.ru/external-script ');
+        };
+
+    </script>
+</body>
+</html>
